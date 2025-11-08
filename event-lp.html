@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カミノウラ307×LTB GYM 大感謝祭 縁日イベント開催 | 2025.11.30</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* ヘッダーナビゲーション */
+        header.top-nav {
+            background-color: rgba(6, 95, 70, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 20px;
+        }
+
+        .nav-logo {
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 16px;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #34d399, #10b981);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a:focus-visible::after {
+            transform: scaleX(1);
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        /* ヘッダーセクション */
+        .hero {
+            background: linear-gradient(135deg, #065f46 0%, #059669 50%, #10b981 100%);
+            color: white;
+            padding: 80px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(6, 95, 70, 0.7) 0%, rgba(5, 150, 105, 0.6) 50%, rgba(16, 185, 129, 0.5) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .event-label {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            line-height: 1.3;
+        }
+
+        .hero-subtitle {
+            font-size: 28px;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .event-info {
+            background-color: rgba(255, 255, 255, 0.95);
+            color: #065f46;
+            padding: 30px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .event-date {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .event-time {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .free-badge {
+            background-color: #ef4444;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* コンテナ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* セクション見出し */
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            color: #065f46;
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #059669, #34d399);
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+
+        /* イベント内容グリッド */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .content-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid #059669;
+        }
+
+        .content-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.3);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            border-radius: 15px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .content-card h3 {
+            font-size: 24px;
+            color: #065f46;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .content-card p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* ハイライトセクション */
+        .highlight-section {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            padding: 60px 20px;
+            margin: 60px 0;
+        }
+
+        .highlight-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-item h4 {
+            color: #065f46;
+            font-size: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-item h4::before {
+            content: '✓';
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background-color: #10b981;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+        }
+
+        /* アクセス情報 */
+        .map-card {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .map-embed {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .map-embed iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 280px;
+            border: 0;
+        }
+
+        .map-link {
+            color: #059669;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .map-link:hover,
+        .map-link:focus-visible {
+            text-decoration: underline;
+        }
+
+        .host-card {
+            margin-top: 30px;
+        }
+
+        .location-section {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .location-card h3 {
+            color: #065f46;
+            font-size: 24px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #059669;
+        }
+
+        .location-info {
+            margin-top: 15px;
+        }
+
+        .location-info p {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .location-info strong {
+            color: #065f46;
+            display: inline-block;
+            min-width: 80px;
+        }
+
+        /* 注意事項 */
+        .notes-section {
+            background: #fff9db;
+            border-left: 6px solid #fbbf24;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        .notes-section h3 {
+            color: #92400e;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .notes-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .notes-section li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            color: #78350f;
+        }
+
+        .notes-section li::before {
+            content: '●';
+            position: absolute;
+            left: 0;
+            color: #fbbf24;
+        }
+
+        /* CTA セクション */
+        .cta-section {
+            position: relative;
+            background: url('5.png') center / cover no-repeat;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 60px;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(6, 95, 70, 0.75) 0%, rgba(16, 185, 129, 0.55) 100%);
+            z-index: 0;
+        }
+
+        .cta-section > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: #065f46;
+            padding: 18px 50px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* フッター */
+        footer {
+            background-color: #064e3b;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .hero-subtitle {
+                font-size: 20px;
+            }
+
+            .event-date {
+                font-size: 28px;
+            }
+
+            .event-time {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-container">
+            <a class="nav-logo" href="#top">LTB GYM  Autumn Fes 2025</a>
+            <nav aria-label="主要メニュー">
+                <ul class="nav-links">
+                    <li><a href="#content">コンテンツ</a></li>
+                    <li><a href="#access">アクセス</a></li>
+                    <li><a href="https://line.me/R/ti/p/@608sbbtv?oat_content=url&ts=09012319" target="_blank" rel="noopener noreferrer">問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section id="top" class="hero">
+        <div class="hero-slideshow" id="heroSlideshow"></div>
+        <div class="hero-content">
+            <div class="event-label">🎉 参加費無料・予約不要 🎉</div>
+            <h1>カミノウラ307 × LTB GYM<br>大感謝祭 縁日イベント</h1>
+            <p class="hero-subtitle">サウナ × トレーニング × 縁日の特別なコラボレーション</p>
+            
+            <div class="event-info">
+                <div class="event-date">2025年11月30日(日)</div>
+                <div class="event-time">13:00 - 20:00</div>
+                <div class="free-badge">入場無料・予約不要</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- イベント内容 -->
+    <section id="content" class="container">
+        <h2 class="section-title">イベント内容</h2>
+        
+        <div class="content-grid">
+            <div class="content-card">
+                <div class="card-image" style="background-image: url('sauna.png');" role="img" aria-label="プライベートサウナの写真"></div>
+                <h3>プライベートサウナ<br>入り放題</h3>
+                <p>カミノウラ307の贅沢なプライベートサウナを1日限定で入り放題!整う体験を存分にお楽しみください。</p>
+            </div>
+
+            <div class="content-card">
+                <div class="card-image" style="background-image: url('training.png');" role="img" aria-label="トレーニング機器の写真"></div>
+                <h3>トレーニング機器で<br>クイズ大会</h3>
+                <p>ダンベルなどのトレーニング機器を使った楽しいクイズ大会!景品もご用意しています。</p>
+            </div>
+
+            <div class="content-card">
+                <div class="card-image" style="background-image: url('ennichi.JPG');" role="img" aria-label="縁日コーナーの写真"></div>
+                <h3>子ども向け<br>縁日コーナー</h3>
+                <p>スーパーボールすくい、くじ引きなど、お子様が楽しめる縁日コーナーを多数ご用意!</p>
+            </div>
+
+            <div class="content-card">
+                <div class="card-image" style="background-image: url('syokuji.JPG');" role="img" aria-label="軽食コーナーの写真"></div>
+                <h3>軽食コーナー</h3>
+                <p>イベント限定の軽食をご用意。<br>*写真はイメージです</p>
+            </div>
+
+            <div class="content-card">
+                <div class="card-image" style="background-image: url('personal.png');" role="img" aria-label="パーソナルトレーニング体験の写真"></div>
+                <h3>パーソナルトレーニング体験</h3>
+                <p>ボディコンテスト入賞歴のあるLTB GYMプロトレーナーが、<br>パーソナルトレーニング体験会を実施。</p>
+            </div>
+
+            <div class="content-card">
+                <div class="card-image" style="background-image: url('beer.png');" role="img" aria-label="クラフトビールの写真"></div>
+                <h3>Witch Craft Marketコラボ<br>クラフトビールサーバー</h3>
+                <p>熊本県最大級の取り扱いを誇るWitch Craft Marketとコラボ。<br>特別なクラフトビール販売を実施。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ハイライトセクション -->
+    <section class="highlight-section">
+        <div class="highlight-content">
+            <h2 class="section-title">こんな方におすすめ!</h2>
+            
+            <div class="features-list">
+                <div class="feature-item">
+                    <h4>トレーニング好きな方</h4>
+                    <p>LTB GYMのトレーナーと楽しく交流できます</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h4>サウナ愛好家</h4>
+                    <p>プライベートサウナを気軽に体験できるチャンス</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h4>家族連れ・子連れ</h4>
+                    <p>お子様も楽しめる縁日コーナーをご用意</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h4>健康に興味がある方</h4>
+                    <p>運動とリラックスの融合を体験できます</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 会場情報 -->
+    <section id="access" class="container">
+        <h2 class="section-title">会場アクセス</h2>
+        
+        <div class="location-section">
+            <div class="location-grid">
+                <div class="location-card">
+                    <h3>📍 メイン会場：<a href="https://kaminoura307.com/" target="_blank" rel="noopener noreferrer">カミノウラ307</a></h3>
+                    <div class="location-info">
+                        <p><strong>住所：</strong>〒860-0848 熊本県熊本市中央区南坪井町２−５ ３階</p>
+                        <p><strong>施設：</strong>プライベートサウナ施設</p>
+                        <p>本イベント会場はこちらです</p>
+                    </div>
+                </div>
+                
+                <div class="location-card map-card">
+                    <h3>🗺️ アクセスマップ</h3>
+                    <div class="map-embed">
+                        <iframe src="https://www.google.com/maps?q=%E7%86%8A%E6%9C%AC%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E5%8D%97%E5%9D%AA%E4%BA%95%E7%94%BA%EF%BC%92%E2%88%925+%E3%82%AB%E3%83%9F%E3%83%8E%E3%82%A6307&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <p><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%E7%86%8A%E6%9C%AC%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E5%8D%97%E5%9D%AA%E4%BA%95%E7%94%BA%EF%BC%92%E2%88%925%20%E3%82%AB%E3%83%9F%E3%83%8E%E3%82%A6307" target="_blank" rel="noopener noreferrer">Googleマップで開く</a></p>
+                </div>
+            </div>
+
+            <div class="location-card host-card">
+                <h3>🏋️ 主催：<a href="https://ltbgym.com/" target="_blank" rel="noopener noreferrer">LTB GYM</a></h3>
+                <div class="location-info">
+                    <p><strong>住所：</strong>〒860-0848 熊本県熊本市中央区南坪井町１−２４ HAPPY-2ビル 2F-5</p>
+                    <p><strong>施設：</strong>パーソナルトレーニングジム</p>
+                    <p>イベント運営・トレーニングコンテンツを担当しています</p>
+                </div>
+            </div>
+
+            <div class="notes-section">
+                <h3>⚠️ ご来場の際の注意事項</h3>
+                <ul>
+                    <li>参加費無料・予約不要でお気軽にお越しください</li>
+                    <li>サウナ利用の際は水着をお貸しします。私物をご持参くださっても結構です</li>
+                    <li>混雑時はお待ちいただく場合がございます</li>
+                    <li>お子様連れの方は保護者の同伴をお願いいたします</li>
+                    <li>駐車場は最寄りのコインパーキングをご利用ください</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTAセクション -->
+    <section id="contact" class="cta-section">
+        <h2>皆様のご来場を心よりお待ちしております!</h2>
+        <p>サウナ、トレーニング、縁日の楽しさを一度に体験できる特別な1日</p>
+        <p style="font-size: 18px; margin-top: 20px;">問い合わせは <a href="https://line.me/R/ti/p/@608sbbtv?oat_content=url&ts=09012319" target="_blank" rel="noopener noreferrer">LTB GYM公式LINE</a> へ</p>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <p><strong>主催：<a href="https://ltbgym.com/" target="_blank" rel="noopener noreferrer">LTB GYM</a></strong></p>
+        <p>協力：カミノウラ307</p>
+        <p style="margin-top: 20px; font-size: 14px;">© 2025 LTB GYM × カミノウラ307 大感謝祭</p>
+    </footer>
+
+    <script>
+        // 画像ファイルのリスト
+        const images = ['1.JPG', '2.jpeg', '3.jpeg', '4.JPG'];
+        
+        // スライドショーの初期化
+        const slideshowContainer = document.getElementById('heroSlideshow');
+        let currentIndex = 0;
+        
+        // 画像スライド要素を作成
+        images.forEach((image, index) => {
+            const slide = document.createElement('div');
+            slide.className = 'hero-slide' + (index === 0 ? ' active' : '');
+            slide.style.backgroundImage = `url('${image}')`;
+            slideshowContainer.appendChild(slide);
+        });
+        
+        // 2秒ごとに画像を切り替え
+        setInterval(() => {
+            const slides = document.querySelectorAll('.hero-slide');
+            slides[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            slides[currentIndex].classList.add('active');
+        }, 2000);
+    </script>
+</body>
+</html>
